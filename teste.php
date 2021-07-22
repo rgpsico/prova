@@ -41,12 +41,11 @@ function PegarSeculo(int $ano){
 
  
  function NumerosRepetidos(array $sorteado){
-  $duplicados = array_unique( array_diff_assoc( $sorteado, array_unique( $sorteado ) ) );
-
- $cont=1;
- $num=0;
-  for($i=0; $i<count($sorteado); $i++)
-      {
+     $duplicados = array_unique( array_diff_assoc( $sorteado, array_unique( $sorteado ) ) );
+     $cont=1;
+     $num=0;
+     for($i=0; $i<count($sorteado); $i++)
+     {
       $cont=0;
       for($j=0; $j<count($sorteado); $j++)
           {
@@ -66,24 +65,21 @@ function PegarSeculo(int $ano){
 
 
 
-    $frutas = array(3,2,1,0);
-  function teste($frutas){
-
-      
-        for ( $i = 0; $i < count($frutas) - 1 ; $i++ ) { 
-            $frutas2[$i] = $frutas[$i];
-                  $teste = array_splice($frutas, $i);
-                
-            if ( @$frutas[$i] > @$frutas[$i+1] ){
-               return false;
-            }else {
-             echo "true";
+    
+  function SequenciaCrescente($frutas){
+    $frutas2 = [];
+      foreach($frutas as $i => $value){
+            unset($frutas2[$i]);
+          if ( @$frutas[$i] > @$frutas[$i+1] ){
+                   return false;
+              }else {
+                 return true;
             }
-              
-           }
+        }
+    }
       
           
-    }
+    
 
 
     teste($frutas);

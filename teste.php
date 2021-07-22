@@ -6,19 +6,6 @@ function PegarSeculo(int $ano){
 }
 
 
-
-$numero =61;
-$divisores = 0;
-
-
- 
-/**2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47,53, 59, 61, 67, 71, 73, 79, 83, 89 e 97
- * impressão de números primos de 1 a 100
- *
- * Números primos são aqueles que só são divisíveis por 1 e por ele mesmo. Logo
- * ele possui apenas 2 divisores.
- */
-
  function PrimoInferior($numero) {
   $array = [];
   for($i = 1; $i <= $numero; $i++)
@@ -52,15 +39,56 @@ $divisores = 0;
 
 }
 
+ 
+ function NumerosRepetidos(array $sorteado){
+  $duplicados = array_unique( array_diff_assoc( $sorteado, array_unique( $sorteado ) ) );
 
+ $cont=1;
+ $num=0;
+  for($i=0; $i<count($sorteado); $i++)
+      {
+      $cont=0;
+      for($j=0; $j<count($sorteado); $j++)
+          {
+          if ($sorteado[$i] == $sorteado[$j])
+          $cont++;
+          $num = $sorteado[$i];
+          }
+      //echo "<br/> repeticoes numero ". $num . ": ".$cont ." vezes";	
+      }
+      echo "<br>";
+      echo"o numero que mais se repetiu foi o numero " . $num . "<br/> repetiu ". $cont."x";
+  
+    }
     
 
+   
 
 
 
+    $frutas = array(3,2,1,0);
+  function teste($frutas){
+
+      
+        for ( $i = 0; $i < count($frutas) - 1 ; $i++ ) { 
+            $frutas2[$i] = $frutas[$i];
+                  $teste = array_splice($frutas, $i);
+                
+            if ( @$frutas[$i] > @$frutas[$i+1] ){
+               return false;
+            }else {
+             echo "true";
+            }
+              
+           }
+      
+          
+    }
 
 
-
+    teste($frutas);
+ 
+    
 
 
 
